@@ -3,6 +3,6 @@ FactoryGirl.define do
     address "barney@lostmy.name"
     email_type "Shipment"
     event "send"
-    timestamp 1432820696
+    timestamp 1_432_820_696
   end
 end

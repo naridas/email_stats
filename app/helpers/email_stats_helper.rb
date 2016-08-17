@@ -10,7 +10,7 @@ module EmailStatsHelper
       user_confirmation: rate_percentage('UserConfirmation', event),
       order: rate_percentage('Order', event),
       refer_friend: rate_percentage('ReferAFriend', event),
-      book_discount: rate_percentage('GetABookDiscount', event),
+      book_discount: rate_percentage('GetABookDiscount', event)
     }
   end
 

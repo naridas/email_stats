@@ -3,15 +3,15 @@ feature 'email statistics' do
   before do
     email_stat2 = FactoryGirl.create(:email_stat, address:'tom@lostmy.name',
                                       email_type:'UserConfirmation', event:'click',
-                                      timestamp:1432820702)
+                                      timestamp:1_432_820_702)
 
     email_stat3 = FactoryGirl.create(:email_stat, address:'vitor@lostmy.name',
                                       email_type:'Shipment', event:'open',
-                                      timestamp:1432820704)
+                                      timestamp:1_432_820_704)
 
     email_stat4 = FactoryGirl.create(:email_stat, address:'bob@lostmy.name',
                                       email_type:'Shipment', event:'open',
-                                      timestamp:1432820707)
+                                      timestamp:1_432_820_707)
   end
 
   scenario 'total number statistics' do

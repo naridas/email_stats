@@ -1,0 +1,18 @@
+<h1>Total</h1>
+Total Number of Emails Sent: <%= @total[:send] %> <br/>
+Total Number of Emails Opened: <%= @total[:open] %> <br/>
+Total Number of Clicks: <%= @total[:click] %> <br/>
+
+<h1>Open Rates</h1>
+Open Rate per Email Type Shipment: <%= @open_rate[:shipment] %>% <br/>
+Open Rate per Email Type Order: <%= @open_rate[:order] %>% <br/>
+Open Rate per Email Type Refer a Friend: <%= @open_rate[:refer_friend] %>% <br/>
+Open Rate per Email Type User Confirmation: <%= @open_rate[:user_confirmation] %>% <br/>
+Open Rate per Email Type Get a Book Discount: <%= @open_rate[:book_discount] %>% <br/>
+
+<h1>Click Rates</h1>
+Click Rate per Email Type Shipment: <%= @click_rate[:shipment] %>% <br/>
+Click Rate per Email Type Order: <%= @click_rate[:order] %>% <br/>
+Click Rate per Email Type Refer a Friend: <%= @click_rate[:refer_friend] %>% <br/>
+Click Rate per Email Type User Confirmation: <%= @click_rate[:user_confirmation] %>% <br/>
+Click Rate per Email Type Get a Book Discount: <%= @click_rate[:book_discount] %>% <br/>

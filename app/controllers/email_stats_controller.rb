@@ -1,8 +1,14 @@
 class EmailStatsController < ApplicationController
 
+  include EmailStatsHelper
+
   def index
-    @total_sent = EmailStat.where(event:'send').count
-    @total_open = EmailStat.where(event:'open').count
-    @total_click = EmailStat.where(event:'click').count
+    @total = {
+      send: event_total('send'),
+      open: event_total('open'),
+      click: event_total('click')
+    }
+    @open_rate = rates('open')
+    @click_rate = rates('click')
   end
 end

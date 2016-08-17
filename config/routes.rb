@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'email_stats_dashboard#index'
+  root 'email_stats#index'
 
-  resources :email_stats_dashboard
+  resources :email_stats
 
   #post 'webhook/receive' => 'webhook#receive' will need later
 

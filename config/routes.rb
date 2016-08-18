@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  root 'email_stats#index'
+
+  resources :email_stats
+
+  post 'webhook/receive' => 'webhook#receive'
+
+  # can also create the route like below
+  # scope '/webhook', :controller => :webhook do
+  #   post :receive
+  # end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

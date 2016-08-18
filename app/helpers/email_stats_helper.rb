@@ -17,7 +17,7 @@ module EmailStatsHelper
   private
 
   def rate_percentage(type, event)
-    type_total(type) == 0 ? 0 : calc_percentage(type, event)
+    type_total(type) == 0 ? 0.0 : calc_percentage(type, event)
   end
 
   def calc_percentage(type, event)

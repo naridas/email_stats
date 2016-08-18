@@ -1,33 +1,40 @@
 feature 'email statistics' do
-  let!(:email_stat) { FactoryGirl.create(:email_stat)}
+
   before do
-    email_stat2 = FactoryGirl.create(:email_stat, address:'tom@lostmy.name',
-                                      email_type:'UserConfirmation', event:'click',
-                                      timestamp:1_432_820_702)
-
-    email_stat3 = FactoryGirl.create(:email_stat, address:'vitor@lostmy.name',
-                                      email_type:'Shipment', event:'open',
-                                      timestamp:1_432_820_704)
-
-    email_stat4 = FactoryGirl.create(:email_stat, address:'bob@lostmy.name',
-                                      email_type:'Shipment', event:'open',
-                                      timestamp:1_432_820_707)
+    email_ship_c = FactoryGirl.create(:email_stat, email_type:'Shipment', event:'click')
+    email_ship_o = FactoryGirl.create(:email_stat, email_type:'Shipment', event:'open')
+    email_order_c = FactoryGirl.create(:email_stat, email_type:'Order', event:'click')
+    email_order_o = FactoryGirl.create(:email_stat, email_type:'Order', event:'open')
+    email_friend_c = FactoryGirl.create(:email_stat, email_type:'ReferAFriend', event:'click')
+    email_friend_o = FactoryGirl.create(:email_stat, email_type:'ReferAFriend', event:'open')
+    email_user_c = FactoryGirl.create(:email_stat, email_type:'UserConfirmation', event:'click')
+    email_user_o = FactoryGirl.create(:email_stat, email_type:'UserConfirmation', event:'open')
+    email_book_c = FactoryGirl.create(:email_stat, email_type:'GetABookDiscount', event:'click')
+    email_book_o = FactoryGirl.create(:email_stat, email_type:'GetABookDiscount', event:'open')
   end
 
   scenario 'total number statistics' do
     visit '/'
-    expect(page).to have_content('Total Number of Emails Sent: 1')
-    expect(page).to have_content('Total Number of Emails Opened: 2')
-    expect(page).to have_content('Total Number of Clicks: 1')
+    expect(page).to have_content('Total Number of Emails Sent: 0')
+    expect(page).to have_content('Total Number of Emails Opened: 5')
+    expect(page).to have_content('Total Number of Clicks: 5')
   end
 
   scenario 'calculates open rate for email types' do
     visit '/'
-    expect(page).to have_content('Open Rate per Email Type Shipment: 66.67%')
+    expect(page).to have_content('Open Rate per Email Type Shipment: 50.0%')
+    expect(page).to have_content('Open Rate per Email Type Order: 50.0%')
+    expect(page).to have_content('Open Rate per Email Type Refer a Friend: 50.0%')
+    expect(page).to have_content('Open Rate per Email Type User Confirmation: 50.0%')
+    expect(page).to have_content('Open Rate per Email Type Get a Book Discount: 50.0%')
   end
 
   scenario 'calculates click rate for email types' do
     visit '/'
-    expect(page).to have_content('Click Rate per Email Type User Confirmation: 100.0%')
+    expect(page).to have_content('Click Rate per Email Type Shipment: 50.0%')
+    expect(page).to have_content('Click Rate per Email Type Order: 50.0%')
+    expect(page).to have_content('Click Rate per Email Type Refer a Friend: 50.0%')
+    expect(page).to have_content('Click Rate per Email Type User Confirmation: 50.0%')
+    expect(page).to have_content('Click Rate per Email Type Get a Book Discount: 50.0%')
   end
 end

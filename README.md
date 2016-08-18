@@ -31,4 +31,4 @@ Ruby on Rails, Rspec, Hound, Travis, Coveralls
 - Unsure how to TDD my webhook controller so I created and then tested using rails s
 - Tried to make a test mimicing `cd ~/*/llirdnam-master/llirdnam ` `go run llirdnam.go http://localhost:3000/webhook/receive` then check if the database is empty, didn't work
 - Added more to my tests to check if each click/open rate is working
-- 
+

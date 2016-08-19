@@ -4,17 +4,21 @@
 
 ## Set up
 
-`bundle install`
+`bundle install` 
+
 `bin/rake db:create`
+
 `bin/rails s`
 
 In a separate terminal window
 `cd ~/*/llirdnam-master/llirdnam `
+
 `go run llirdnam.go http://localhost:3000/webhook/receive`
 
 Use a Web browser and go to
 `http://localhost:3000`
 to see the Statistics
+Refresh to change further changes
 
 ## Technology used
 
@@ -32,3 +36,11 @@ Ruby on Rails, Rspec, Hound, Travis, Coveralls
 - Tried to make a test mimicing `cd ~/*/llirdnam-master/llirdnam ` `go run llirdnam.go http://localhost:3000/webhook/receive` then check if the database is empty, didn't work
 - Added more to my tests to check if each click/open rate is working
 
+## Assumptions
+
+- Assumed by rate they meant the percentage of click/open for each email type e.g. click shipment/ total shipment * 100 => % 
+- Change total shipment to a float since intergers don't round up, then rounded it to 2 decimal places
+ 
+## Furture changes
+
+- Add some pie charts for each email type for each event

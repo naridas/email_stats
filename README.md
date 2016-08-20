@@ -18,16 +18,16 @@ In a separate terminal window
 Use a Web browser and go to
 `http://localhost:3000`
 to see the Statistics
-Refresh to change further changes
+Refresh to see changes
 
 ## Technology used
 
-Ruby on Rails, Rspec, Hound, Travis, Coveralls
+Ruby on Rails, Rspec, Hound, Travis, Coveralls, PostgreSQL
 
 ## Thought Process
 
 - First set up rails project with hound, travis and Coveralls
-- Started on totals first since I had a good understanding how to start
+- Started on totals features first since I had a good understanding how to test it
 - Made a feature test for total number statistics in order to start my TDD
 - After making my test past, I refactored my code
 - Created tests for click rate and open rate then do my previous steps
